@@ -1,0 +1,115 @@
+/* 
+  Estilos de Productos y Detalle de producto
+  Complementa a estilos.css
+   */
+
+.filtros-categoria {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: var(--space-md);
+}
+
+.filtros-categoria button {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  border-radius: var(--radius);
+  padding: 0.4rem 0.9rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.filtros-categoria button:hover {
+  color: var(--bg);
+  border-color: var(--border);
+}
+
+.filtros-categoria button.activo {
+  background: var(--accent-red);
+  color: var(--bg);
+  border-color: var(--accent-red);
+}
+
+.breadcrumb {
+  font-size: 0.85rem;
+  margin-bottom: var(--space-md);
+}
+
+.detalle-producto {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+}
+
+.detalle-imagen {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: rgba(241, 234, 224, 0.85);
+}
+
+.detalle-info .marca-modelo {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.detalle-info .precio-grande {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--accent-gold-soft);
+  margin: var(--space-sm) 0;
+}
+
+.selector-cantidad {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: var(--space-sm) 0 var(--space-md);
+}
+
+.selector-cantidad button {
+  width: 36px;
+  height: 36px;
+  background: var(--text-muted);
+  border: 1px solid var(--text-muted);
+  color: var(--text);
+  border-radius: var(--radius);
+  font-size: 1.1rem;
+}
+
+.selector-cantidad button:hover { border-color: var(--text); }
+
+.selector-cantidad input {
+  width: 50px;
+  text-align: center;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: var(--radius);
+  padding: 0.5rem 0;
+}
+
+.mensaje-confirmacion {
+  margin-top: var(--space-sm);
+  font-size: 0.85rem;
+  color: var(--text);
+  display: none;
+}
+
+.mensaje-confirmacion.visible { display: block; }
+
+@media (min-width: 768px) {
+  .detalle-producto {
+    grid-template-columns: 1fr 1fr;
+  }
+}

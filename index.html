@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sonido Vivo | Instrumentos y Equipos Musicales</title>
+  <meta name="description" content="Tienda online de instrumentos musicales, equipos de sonido y accesorios en Viña del Mar.">
+  <link rel="stylesheet" href="CSS/estilos.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar" aria-label="Navegación principal">
+      <a class="logo-text" href="index.html">Sonido<span>Vivo</span></a>
+
+      <button class="nav-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <div class="nav-menu">
+        <ul class="nav-links">
+          <li><a href="index.html" aria-current="page">Home</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+
+        <ul class="nav-icons">
+          <li>
+            <a href="login.html">Iniciar sesión</a>
+          </li>
+          <li>
+            <a href="registro.html">Registrar usuario</a>
+          </li>
+          <li>
+            <a href="carrito.html" aria-label="Ver carrito de compras">
+              🛒 Cart (<span class="cart-count">0</span>)
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="container hero">
+      <div class="hero-text">
+        <p class="eyebrow">Donde la pasión por la música se convierte en sonido</p>
+        <h1>Hecho por músicos. Hecho para sonar</h1>
+        <p>
+          Instrumentos musicales, audio profesional y accesorios
+          en un solo lugar.
+        </p>
+        <a class="btn-primary" href="productos.html">Ver productos</a>
+      </div>
+      <div class="hero-img-placeholder">
+        <img src="https://i.pinimg.com/736x/be/81/dd/be81dd8f099ddda7604052fec130d1a8.jpg" alt="Interior de la tienda Sonido Vivo">
+      </div>
+    </section>
+
+    <section class="container section" aria-labelledby="titulo-destacados">
+      <div class="section-title">
+        <h2 id="titulo-destacados">Productos destacados</h2>
+        <a href="productos.html">Ver todo el catálogo →</a>
+      </div>
+
+      <div class="product-grid" id="productos-destacados">
+        <!-- Las tarjetas de producto se generan dinámicamente con JS (home.js) -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Sonido Vivo</h4>
+          <p>Tienda especialista en instrumentos 
+            musicales, audio profesional y accesorios
+            en Viña del Mar, con envíos a todo Chile.</p>
+        </div>
+        <div>
+          <h4>Categorías</h4>
+          <p><a href="productos.html">Guitarras</a></p>
+          <p><a href="productos.html">Baterías y percusión</a></p>
+          <p><a href="productos.html">Estudio y grabación</a></p>
+        </div>
+        <div>
+          <h4>Ayuda</h4>
+          <p><a href="contacto.html">Contacto</a></p>
+          <p><a href="nosotros.html">Sobre nosotros</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Sonido Vivo. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="JS/productos-data.js"></script>
+  <script src="JS/carrito.js"></script>
+  <script src="JS/home.js"></script>
+  <script src="JS/nav.js"></script>
+</body>
+</html>

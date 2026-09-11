@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blogs | Sonido Vivo</title>
+  <link rel="stylesheet" href="CSS/estilos.css">
+  <link rel="stylesheet" href="CSS/blogs.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar" aria-label="Navegación principal">
+      <a class="logo-text" href="index.html">Sonido<span>Vivo</span></a>
+
+      <button class="nav-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <div class="nav-menu">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="blogs.html" aria-current="page">Blogs</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+
+        <ul class="nav-icons">
+          <li><a href="login.html">Iniciar sesión</a></li>
+          <li><a href="registro.html">Registrar usuario</a></li>
+          <li>
+            <a href="carrito.html" aria-label="Ver carrito de compras">
+              🛒 Cart (<span class="cart-count">0</span>)
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container section">
+    <h1>Noticias importantes</h1>
+    <p class="descripcion">Datos curiosos e historias sobre instrumentos y equipos musicales.</p>
+
+    <article class="blog-card">
+      <div class="blog-img-placeholder" aria-hidden="true">Imagen del blog</div>
+      <div>
+        <h3>Caso curioso #1: por qué las guitarras Fender llevan ese nombre</h3>
+        <p>Leo Fender nunca supo tocar guitarra, pero revolucionó cómo se construyen. Te contamos el origen de una de las marcas más queridas por los músicos.</p>
+        <a class="btn-secondary" href="blog-detalle-1.html">Ver caso</a>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <div class="blog-img-placeholder" aria-hidden="true">Imagen del blog</div>
+      <div>
+        <h3>Caso curioso #2: cuidados básicos para tu primer instrumento</h3>
+        <p>Humedad, temperatura y limpieza: pequeños hábitos que alargan la vida de tu guitarra, bajo o teclado recién comprado.</p>
+        <a class="btn-secondary" href="blog-detalle-2.html">Ver caso</a>
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>Sonido Vivo</h4>
+          <p>Instrumentos musicales, equipos de sonido y accesorios en Viña del Mar, Región de Valparaíso.</p>
+        </div>
+        <div>
+          <h4>Categorías</h4>
+          <p><a href="productos.html">Guitarras</a></p>
+          <p><a href="productos.html">Baterías y percusión</a></p>
+          <p><a href="productos.html">Estudio y grabación</a></p>
+        </div>
+        <div>
+          <h4>Ayuda</h4>
+          <p><a href="contacto.html">Contacto</a></p>
+          <p><a href="nosotros.html">Sobre nosotros</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Sonido Vivo. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="JS/productos-data.js"></script>
+  <script src="JS/carrito.js"></script>
+  <script src="JS/nav.js"></script>
+</body>
+</html>
