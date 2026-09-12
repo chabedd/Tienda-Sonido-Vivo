@@ -1,9 +1,4 @@
-/* =========================================================
-   SONIDO VIVO — Regiones y Comunas
-   Arreglo complementario para los selects dependientes de
-   Región/Comuna (registro de usuario y mantenedor de usuarios
-   en el administrador).
-   ========================================================= */
+/* Regiones y Comunas*/
 
 const REGIONES_COMUNAS = {
   "Región Metropolitana de Santiago": [
@@ -35,7 +30,7 @@ function obtenerListaRegiones() {
 
 /**
  * Devuelve las comunas asociadas a una región. Si la región no
- * existe en el arreglo, devuelve una lista vacía.
+ * existe, devuelve una lista vacía.
  */
 function obtenerComunasPorRegion(region) {
   return REGIONES_COMUNAS[region] || [];
