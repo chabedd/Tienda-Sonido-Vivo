@@ -1,8 +1,4 @@
-/* 
-  Lee el parámetro "codigo" de la URL (?codigo=GA001),
-  busca el producto en el catálogo y renderiza su información.
-  Permite elegir cantidad y añadirlo al carrito.
-    */
+/* busca el producto en el catálogo y muestra su información. */
 
 document.addEventListener("DOMContentLoaded", function () {
   const parametros = new URLSearchParams(window.location.search);
@@ -20,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   document.title = producto.nombre + " | Sonido Vivo";
 
-  const iniciales = obtenerIniciales(producto.nombre);
   const stockBajo = producto.stock <= STOCK_CRITICO_DEFAULT;
 
   contenedor.innerHTML = `
@@ -32,9 +27,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     <div class="detalle-producto">
       <div class="detalle-imagen${producto.imagen ? " con-imagen" : ""}" style="background:${colorPorCategoria(producto.categoria)}">
-        ${producto.imagen
-          ? `<img src="${producto.imagen}" alt="${producto.nombre}" onerror="this.remove()">`
-          : iniciales}
+        ${producto.imagen ? `<img src="${producto.imagen}" alt="${producto.nombre}" onerror="this.remove()">` : ""}
       </div>
 
       <div class="detalle-info">

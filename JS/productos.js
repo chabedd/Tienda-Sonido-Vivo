@@ -1,8 +1,6 @@
 /* 
-  Renderiza el listado completo del catálogo y permite
-  filtrar por categoría. También maneja el botón "Añadir"
-  de cada tarjeta, que agrega el producto al carrito.
-  */
+  listado completo del catálogo y permite
+  filtrar por categoría.*/
 
 document.addEventListener("DOMContentLoaded", function () {
   const contenedor = document.querySelector("#lista-productos");
@@ -34,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // Delegación de eventos para los botones "Añadir" de cada tarjeta
+  // Eventos para los botones "Añadir".
   contenedor.addEventListener("click", function (evento) {
     const boton = evento.target.closest(".btn-anadir");
     if (!boton) return;
@@ -57,16 +55,13 @@ function renderizarProductos(lista) {
   }
 
   contenedor.innerHTML = lista.map(function (producto) {
-    const iniciales = obtenerIniciales(producto.nombre);
     const stockBajo = producto.stock <= STOCK_CRITICO_DEFAULT;
 
     return `
       <article class="product-card">
         <a href="detalle-producto.html?codigo=${producto.codigo}">
           <div class="product-img-placeholder${producto.imagen ? " con-imagen" : ""}" style="background:${colorPorCategoria(producto.categoria)}">
-            ${producto.imagen
-              ? `<img src="${producto.imagen}" alt="${producto.nombre}" onerror="this.remove()">`
-              : iniciales}
+            ${producto.imagen ? `<img src="${producto.imagen}" alt="${producto.nombre}" onerror="this.remove()">` : ""}
           </div>
           <div class="product-info">
             <span class="product-category">${producto.categoria}</span>

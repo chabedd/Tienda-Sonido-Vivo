@@ -54,13 +54,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
     contenedorItems.innerHTML = carrito.map(function (item) {
       const producto = buscarProductoPorCodigo(item.codigo);
-      const iniciales = obtenerIniciales(item.nombre);
       const colorFondo = producto ? colorPorCategoria(producto.categoria) : "#2A241C";
       const stockMaximo = producto ? producto.stock : 99;
 
       return `
         <article class="carrito-item" data-codigo="${item.codigo}">
-          <div class="item-imagen" style="background:${colorFondo}">${iniciales}</div>
+          <div class="item-imagen" style="background:${colorFondo}">
+            ${producto && producto.imagen ? `<img src="${producto.imagen}" alt="${item.nombre}" onerror="this.remove()">` : ""}
+          </div>
 
           <div class="item-info">
             <span class="item-nombre">${item.nombre}</span>

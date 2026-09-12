@@ -65,7 +65,7 @@ const PRODUCTOS = [
   { codigo: "ES005", categoria: "Estudio y Grabación", nombre: "Pop Filter para Micrófono", marca: "Sennheiser", modelo: "MZP 40", stock: 8, precio: 14990, descripcion: "Doble malla, brazo flexible con clip.", imagen: "https://i.pinimg.com/1200x/6b/a5/d8/6ba5d81f1c8f6fc56d7340e1193303f7.jpg" }
 ];
 
-// Umbral genérico de stock crítico para mostrar aviso en el listado (ajustable por producto en el admin)
+// Umbral  de stock crítico para mostrar aviso en el listado.
 const STOCK_CRITICO_DEFAULT = 3;
 
 /**
@@ -74,19 +74,6 @@ const STOCK_CRITICO_DEFAULT = 3;
  */
 function formatearCLP(valor) {
   return "$" + Number(valor).toLocaleString("es-CL");
-}
-
-/**
- * Devuelve las iniciales de un nombre de producto, usadas como
- * marcador visual mientras no se cuenta con fotografías reales.
- */
-function obtenerIniciales(nombre) {
-  return nombre
-    .split(" ")
-    .filter(function (palabra) { return palabra.length > 0; })
-    .slice(0, 2)
-    .map(function (palabra) { return palabra[0].toUpperCase(); })
-    .join("");
 }
 
 /**
