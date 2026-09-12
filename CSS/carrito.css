@@ -1,0 +1,137 @@
+/* =========================================================
+   SONIDO VIVO — Estilos del Carrito de compras
+   Complementa a estilos.css
+   ========================================================= */
+
+.carrito-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  align-items: start;
+}
+
+.carrito-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.carrito-item {
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  gap: var(--space-sm);
+  align-items: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-sm);
+}
+
+.carrito-item .item-imagen {
+  width: 70px;
+  height: 70px;
+  border-radius: var(--radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: rgba(241, 234, 224, 0.85);
+}
+
+.carrito-item .item-info .item-nombre {
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.carrito-item .item-info .item-precio-unitario {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.carrito-item .item-acciones {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.4rem;
+}
+
+.carrito-item .item-subtotal {
+  font-family: var(--font-display);
+  color: var(--accent-gold-soft);
+  font-size: 1.05rem;
+}
+
+.btn-quitar {
+  background: none;
+  border: none;
+  color: var(--accent-red);
+  font-size: 0.75rem;
+  text-decoration: underline;
+  padding: 0;
+}
+
+.carrito-vacio {
+  text-align: center;
+  padding: var(--space-xl) 0;
+}
+
+.resumen-carrito {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: var(--space-md);
+}
+
+.resumen-carrito h3 {
+  font-size: 1.1rem;
+  margin-bottom: var(--space-sm);
+}
+
+.resumen-linea {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-muted);
+}
+
+.resumen-linea.total {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-top: 1px solid var(--border);
+  padding-top: var(--space-sm);
+  margin-top: var(--space-sm);
+}
+
+.cupon-form {
+  display: flex;
+  gap: 0.5rem;
+  margin: var(--space-sm) 0;
+}
+
+.cupon-form input {
+  flex: 1;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.5rem;
+  color: var(--text);
+}
+
+.cupon-mensaje {
+  font-size: 0.8rem;
+  margin-bottom: var(--space-sm);
+  min-height: 1em;
+}
+
+.cupon-mensaje.error { color: var(--accent-red); }
+.cupon-mensaje.exito { color: #bfe0bf; }
+
+@media (min-width: 768px) {
+  .carrito-layout {
+    grid-template-columns: 2fr 1fr;
+  }
+}

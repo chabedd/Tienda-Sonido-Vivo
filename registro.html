@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de usuario | Sonido Vivo</title>
+  <link rel="stylesheet" href="CSS/estilos.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar" aria-label="Navegación principal">
+      <a class="logo-text" href="index.html">Sonido<span>Vivo</span></a>
+
+      <button class="nav-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <div class="nav-menu">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+
+        <ul class="nav-icons">
+          <li>
+            <a href="carrito.html" aria-label="Ver carrito de compras">
+              🛒 Cart (<span class="cart-count">0</span>)
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="form-card" style="max-width:620px;" aria-labelledby="titulo-registro">
+      <h2 id="titulo-registro">Registro de usuario</h2>
+
+      <p class="form-success" id="registro-exito" role="status">
+        Registro válido. En una versión posterior estos datos se guardarán en el servidor.
+      </p>
+
+      <form id="form-registro" novalidate>
+        <div class="form-row dos-columnas">
+          <div class="form-group">
+            <label for="reg-run">RUN (sin puntos ni guion)</label>
+            <input type="text" id="reg-run" name="run" maxlength="9" placeholder="19011022K">
+            <span class="form-error" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="reg-nacimiento">Fecha de nacimiento (opcional)</label>
+            <input type="date" id="reg-nacimiento" name="fechaNacimiento">
+            <span class="form-error" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="form-row dos-columnas">
+          <div class="form-group">
+            <label for="reg-nombre">Nombre</label>
+            <input type="text" id="reg-nombre" name="nombre" maxlength="50" autocomplete="given-name">
+            <span class="form-error" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="reg-apellidos">Apellidos</label>
+            <input type="text" id="reg-apellidos" name="apellidos" maxlength="100" autocomplete="family-name">
+            <span class="form-error" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="reg-correo">Correo</label>
+          <input type="email" id="reg-correo" name="correo" maxlength="100" autocomplete="email" placeholder="tucorreo@gmail.com">
+          <span class="form-error" role="alert"></span>
+        </div>
+
+        <div class="form-row dos-columnas">
+          <div class="form-group">
+            <label for="reg-region">Región</label>
+            <select id="reg-region" name="region">
+              <option value="">-- Seleccione la región --</option>
+            </select>
+            <span class="form-error" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="reg-comuna">Comuna</label>
+            <select id="reg-comuna" name="comuna">
+              <option value="">-- Seleccione la comuna --</option>
+            </select>
+            <span class="form-error" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="reg-direccion">Dirección</label>
+          <input type="text" id="reg-direccion" name="direccion" maxlength="300" autocomplete="street-address">
+          <span class="form-error" role="alert"></span>
+        </div>
+
+        <div class="form-row dos-columnas">
+          <div class="form-group">
+            <label for="reg-password">Contraseña</label>
+            <input type="password" id="reg-password" name="password" maxlength="10" autocomplete="new-password">
+            <span class="form-error" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="reg-password-confirm">Confirmar contraseña</label>
+            <input type="password" id="reg-password-confirm" name="passwordConfirm" maxlength="10" autocomplete="new-password">
+            <span class="form-error" role="alert"></span>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width:100%;">Registrar</button>
+
+        <p style="text-align:center; margin-top: var(--space-sm); font-size:0.85rem;">
+          ¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a>
+        </p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Sonido Vivo. Proyecto académico DSY1104 — Desarrollo Fullstack II.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="JS/productos-data.js"></script>
+  <script src="JS/carrito.js"></script>
+  <script src="JS/regiones-comunas.js"></script>
+  <script src="JS/validaciones.js"></script>
+  <script src="JS/registro.js"></script>
+  <script src="JS/nav.js"></script>
+</body>
+</html>

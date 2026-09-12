@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Sonido Vivo</title>
+  <link rel="stylesheet" href="CSS/estilos.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <nav class="navbar" aria-label="Navegación principal">
+      <a class="logo-text" href="index.html">Sonido<span>Vivo</span></a>
+
+      <button class="nav-toggle" type="button" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+
+      <div class="nav-menu">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="productos.html">Productos</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="blogs.html">Blogs</a></li>
+          <li><a href="contacto.html" aria-current="page">Contacto</a></li>
+        </ul>
+
+        <ul class="nav-icons">
+          <li><a href="login.html">Iniciar sesión</a></li>
+          <li><a href="registro.html">Registrar usuario</a></li>
+          <li>
+            <a href="carrito.html" aria-label="Ver carrito de compras">
+              🛒 Cart (<span class="cart-count">0</span>)
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="form-card" aria-labelledby="titulo-contacto">
+      <h2 id="titulo-contacto">Escríbenos</h2>
+      <p style="text-align:center; margin-top:-0.5rem;">¿Tienes una consulta sobre algún producto? Cuéntanos y te respondemos a la brevedad.</p>
+
+      <p class="form-success" id="contacto-exito" role="status">
+        Mensaje enviado. En una versión posterior este formulario se conectará con el servidor de la tienda.
+      </p>
+
+      <form id="form-contacto" novalidate>
+        <div class="form-group">
+          <label for="contacto-nombre">Nombre completo</label>
+          <input type="text" id="contacto-nombre" name="nombre" maxlength="100" autocomplete="name">
+          <span class="form-error" role="alert"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="contacto-correo">Correo</label>
+          <input type="email" id="contacto-correo" name="correo" maxlength="100" autocomplete="email" placeholder="tucorreo@gmail.com">
+          <span class="form-error" role="alert"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="contacto-comentario">Comentario</label>
+          <textarea id="contacto-comentario" name="comentario" rows="5" maxlength="500"></textarea>
+          <span id="contador-comentario" style="font-size:0.75rem; color:var(--text-muted);">0 / 500</span>
+          <span class="form-error" role="alert"></span>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width:100%;">Enviar mensaje</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Sonido Vivo. Proyecto académico DSY1104 — Desarrollo Fullstack II.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="JS/productos-data.js"></script>
+  <script src="JS/carrito.js"></script>
+  <script src="JS/validaciones.js"></script>
+  <script src="JS/contacto.js"></script>
+  <script src="JS/nav.js"></script>
+</body>
+</html>
