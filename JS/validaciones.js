@@ -1,13 +1,8 @@
-/* =========================================================
-   SONIDO VIVO — Validaciones de formularios
-   Funciones puras de validación (reutilizables en login,
-   registro y contacto) + helpers para mostrar/ocultar
-   mensajes de error en la interfaz.
-   ========================================================= */
+/* Validaciones de formularios */
 
 const DOMINIOS_CORREO_PERMITIDOS = ["@duoc.cl", "@profesor.duoc.cl", "@gmail.com"];
 
-/* ---------- Validaciones puras (reciben un valor, devuelven true/false) ---------- */
+/* ---------- Validaciones, devuelven true/false) ---------- */
 
 function esRequerido(valor) {
   return valor !== null && valor !== undefined && valor.trim().length > 0;
@@ -81,7 +76,6 @@ function validarRun(valor) {
 
 /**
  * Marca un .form-group como inválido y muestra el mensaje de error.
- * Espera que el campo esté envuelto en: <div class="form-group"><input><span class="form-error"></span></div>
  */
 function marcarInvalido(input, mensaje) {
   const grupo = input.closest(".form-group");
@@ -110,9 +104,7 @@ function marcarValido(input) {
 
 /**
  * Ejecuta una lista de reglas sobre un input y actualiza la UI.
- * "reglas" es un arreglo de objetos { test: fn(valor) => bool, mensaje: string }.
  * Se detiene en la primera regla que falle (para mostrar un solo mensaje a la vez).
- * Devuelve true si el campo pasó todas las reglas.
  */
 function validarCampo(input, reglas) {
   const valor = input.value;
