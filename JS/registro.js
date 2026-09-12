@@ -1,19 +1,4 @@
-/* =========================================================
-   SONIDO VIVO — Validación del formulario de Registro
-   El anexo indica que el registro de usuario usa las mismas
-   reglas que "crear usuario" en el administrador:
-   - RUN: requerido, sin puntos ni guion, 7 a 9 caracteres, válido.
-   - Nombre: requerido, máx 50 caracteres.
-   - Apellidos: requerido, máx 100 caracteres.
-   - Correo: requerido, máx 100 caracteres, dominios permitidos.
-   - Fecha nacimiento: opcional.
-   - Región / Comuna: selects dependientes.
-   - Dirección: requerida, máx 300 caracteres.
-   Se agregan además Contraseña / Confirmar contraseña
-   (no exigidas explícitamente por la pauta, pero necesarias
-   para un registro real; se valida con el mismo criterio que
-   el login: 4 a 10 caracteres).
-   ========================================================= */
+/* Validación del formulario de Registro */
 
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector("#form-registro");
