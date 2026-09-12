@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar producto | Panel administrador | Sonido Vivo</title>
+  <link rel="stylesheet" href="../CSS/estilos.css">
+  <link rel="stylesheet" href="../CSS/admin.css">
+</head>
+<body>
+
+  <div class="admin-topbar">
+    <span class="admin-logo">Sonido<span>Vivo</span> Admin</span>
+    <button class="nav-toggle" type="button" aria-label="Abrir menú" style="display:inline-block;">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+  </div>
+
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <a class="admin-logo" href="admin-home.html">Sonido<span>Vivo</span> Admin</a>
+      <nav class="admin-nav" aria-label="Navegación del administrador">
+        <a href="admin-home.html">Dashboard</a>
+        <a href="productos-listado.html" aria-current="page">Productos</a>
+        <a href="usuarios-listado.html">Usuarios</a>
+        <div class="admin-nav-salir">
+          <a href="../index.html">Salir a la tienda</a>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="admin-content">
+      <h1 id="titulo-form-producto">Nuevo producto</h1>
+
+      <p class="admin-alert" id="producto-exito" role="status"></p>
+
+      <form id="form-producto" novalidate style="max-width:600px;">
+        <div class="form-row dos-columnas">
+          <div class="form-group">
+            <label for="prod-codigo">Código</label>
+            <input type="text" id="prod-codigo" name="codigo" placeholder="Ej: GA006">
+            <span class="form-error" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="prod-categoria">Categoría</label>
+            <select id="prod-categoria" name="categoria">
+              <option value="">-- Seleccione la categoría --</option>
+            </select>
+            <span class="form-error" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="prod-nombre">Nombre</label>
+          <input type="text" id="prod-nombre" name="nombre" maxlength="100">
+          <span class="form-error" role="alert"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="prod-descripcion">Descripción (opcional)</label>
+          <textarea id="prod-descripcion" name="descripcion" rows="3" maxlength="500"></textarea>
+          <span class="form-error" role="alert"></span>
+        </div>
+
+        <div class="form-row dos-columnas">
+          <div class="form-group">
+            <label for="prod-precio">Precio (CLP)</label>
+            <input type="text" id="prod-precio" name="precio" placeholder="129990">
+            <span class="form-error" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="prod-stock">Stock</label>
+            <input type="text" id="prod-stock" name="stock" placeholder="10">
+            <span class="form-error" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="prod-stock-critico">Stock crítico (opcional)</label>
+          <input type="text" id="prod-stock-critico" name="stockCritico" placeholder="Ej: 3">
+          <span class="form-error" role="alert"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="prod-imagen">Imagen (opcional)</label>
+          <input type="file" id="prod-imagen" name="imagen" accept="image/*">
+          <span class="form-error" role="alert"></span>
+        </div>
+
+        <button type="submit" class="btn-primary">Guardar producto</button>
+        <a href="productos-listado.html" class="btn-secondary" style="margin-left:0.5rem;">Cancelar</a>
+      </form>
+    </main>
+  </div>
+
+  <script src="../JS/productos-data.js"></script>
+  <script src="../JS/admin-productos.js"></script>
+  <script src="../JS/validaciones.js"></script>
+  <script src="../JS/admin-producto-form.js"></script>
+  <script src="../JS/admin-nav.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevo usuario | Panel administrador | Sonido Vivo</title>
+  <link rel="stylesheet" href="../CSS/estilos.css">
+  <link rel="stylesheet" href="../CSS/admin.css">
+</head>
+<body>
+
+  <div class="admin-topbar">
+    <span class="admin-logo">Sonido<span>Vivo</span> Admin</span>
+    <button class="nav-toggle" type="button" aria-label="Abrir menú" style="display:inline-block;">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+  </div>
+
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <a class="admin-logo" href="admin-home.html">Sonido<span>Vivo</span> Admin</a>
+      <nav class="admin-nav" aria-label="Navegación del administrador">
+        <a href="admin-home.html">Dashboard</a>
+        <a href="productos-listado.html">Productos</a>
+        <a href="usuarios-listado.html" aria-current="page">Usuarios</a>
+        <div class="admin-nav-salir">
+          <a href="../index.html">Salir a la tienda</a>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="admin-content">
+      <h1 id="titulo-form-usuario">Nuevo usuario</h1>
+
+      <p class="admin-alert" id="usuario-exito" role="status"></p>
+
+      <form id="form-usuario" novalidate style="max-width:620px;">
+        <div class="form-row dos-columnas">
+          <div class="form-group">
+            <label for="usr-run">RUN (sin puntos ni guion)</label>
+            <input type="text" id="usr-run" name="run" maxlength="9" placeholder="19011022K">
+            <span class="form-error" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="usr-nacimiento">Fecha de nacimiento (opcional)</label>
+            <input type="date" id="usr-nacimiento" name="fechaNacimiento">
+            <span class="form-error" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="form-row dos-columnas">
+          <div class="form-group">
+            <label for="usr-nombre">Nombre</label>
+            <input type="text" id="usr-nombre" name="nombre" maxlength="50">
+            <span class="form-error" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="usr-apellidos">Apellidos</label>
+            <input type="text" id="usr-apellidos" name="apellidos" maxlength="100">
+            <span class="form-error" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="usr-correo">Correo</label>
+          <input type="email" id="usr-correo" name="correo" maxlength="100" placeholder="tucorreo@gmail.com">
+          <span class="form-error" role="alert"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="usr-tipo">Tipo de usuario</label>
+          <select id="usr-tipo" name="tipoUsuario">
+            <option value="">-- Seleccione el tipo --</option>
+            <option value="Administrador">Administrador</option>
+            <option value="Vendedor">Vendedor</option>
+            <option value="Cliente">Cliente</option>
+          </select>
+          <span class="form-error" role="alert"></span>
+        </div>
+
+        <div class="form-row dos-columnas">
+          <div class="form-group">
+            <label for="usr-region">Región</label>
+            <select id="usr-region" name="region">
+              <option value="">-- Seleccione la región --</option>
+            </select>
+            <span class="form-error" role="alert"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="usr-comuna">Comuna</label>
+            <select id="usr-comuna" name="comuna">
+              <option value="">-- Seleccione la comuna --</option>
+            </select>
+            <span class="form-error" role="alert"></span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="usr-direccion">Dirección</label>
+          <input type="text" id="usr-direccion" name="direccion" maxlength="300">
+          <span class="form-error" role="alert"></span>
+        </div>
+
+        <button type="submit" class="btn-primary">Guardar usuario</button>
+        <a href="usuarios-listado.html" class="btn-secondary" style="margin-left:0.5rem;">Cancelar</a>
+      </form>
+    </main>
+  </div>
+
+  <script src="../JS/admin-usuarios.js"></script>
+  <script src="../JS/regiones-comunas.js"></script>
+  <script src="../JS/validaciones.js"></script>
+  <script src="../JS/admin-usuario-form.js"></script>
+  <script src="../JS/admin-nav.js"></script>
+</body>
+</html>

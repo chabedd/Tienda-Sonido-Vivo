@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel administrador | Sonido Vivo</title>
+  <link rel="stylesheet" href="../CSS/estilos.css">
+  <link rel="stylesheet" href="../CSS/admin.css">
+</head>
+<body>
+
+  <div class="admin-topbar">
+    <span class="admin-logo">Sonido<span>Vivo</span> Admin</span>
+    <button class="nav-toggle" type="button" aria-label="Abrir menú" style="display:inline-block;">
+      <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+    </button>
+  </div>
+
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <a class="admin-logo" href="admin-home.html">Sonido<span>Vivo</span> Admin</a>
+      <nav class="admin-nav" aria-label="Navegación del administrador">
+        <a href="admin-home.html" aria-current="page">Dashboard</a>
+        <a href="productos-listado.html">Productos</a>
+        <a href="usuarios-listado.html">Usuarios</a>
+        <div class="admin-nav-salir">
+          <a href="../index.html">Salir a la tienda</a>
+        </div>
+      </nav>
+    </aside>
+
+    <main class="admin-content">
+      <h1>¡Hola, Administrador!</h1>
+      <p>Desde aquí puedes gestionar el catálogo de productos y los usuarios del sistema.</p>
+
+      <div class="admin-header-row" style="margin-top: var(--space-lg);">
+        <div class="admin-table-wrapper" style="flex:1; min-width:220px; border:none;">
+          <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:var(--space-md);">
+            <span style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase;">Productos en catálogo</span>
+            <p id="dato-total-productos" style="font-family:var(--font-display); font-size:1.8rem; color:var(--accent-gold-soft); margin:0.3rem 0 0;">—</p>
+          </div>
+        </div>
+        <div style="flex:1; min-width:220px;">
+          <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:var(--space-md);">
+            <span style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase;">Usuarios registrados</span>
+            <p id="dato-total-usuarios" style="font-family:var(--font-display); font-size:1.8rem; color:var(--accent-gold-soft); margin:0.3rem 0 0;">—</p>
+          </div>
+        </div>
+        <div style="flex:1; min-width:220px;">
+          <div style="background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:var(--space-md);">
+            <span style="font-size:0.8rem; color:var(--text-muted); text-transform:uppercase;">Productos con stock crítico</span>
+            <p id="dato-stock-critico" style="font-family:var(--font-display); font-size:1.8rem; color:var(--accent-red); margin:0.3rem 0 0;">—</p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="../JS/productos-data.js"></script>
+  <script src="../JS/admin-productos.js"></script>
+  <script src="../JS/admin-usuarios.js"></script>
+  <script src="../JS/admin-nav.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const productos = obtenerProductosAdmin();
+      document.querySelector("#dato-total-productos").textContent = productos.length;
+      document.querySelector("#dato-total-usuarios").textContent = obtenerUsuariosAdmin().length;
+      document.querySelector("#dato-stock-critico").textContent = productos.filter(function (p) {
+        return p.stock <= (p.stockCritico !== undefined ? p.stockCritico : STOCK_CRITICO_DEFAULT);
+      }).length;
+    });
+  </script>
+</body>
+</html>
