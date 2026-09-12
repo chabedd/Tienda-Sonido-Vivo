@@ -39,8 +39,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const reglasRun = [
     { test: esRequerido, mensaje: "El RUN es obligatorio." },
-    { test: function (v) { return cumpleLargoMinimo(v, 7) && cumpleLargoMaximo(v, 9); }, mensaje: "Debe tener entre 7 y 9 caracteres." },
-    { test: validarRun, mensaje: "El RUN ingresado no es válido. Sin puntos ni guion, ej: 19011022K." }
+    { test: function (v) { return cumpleLargoMinimo(v.trim(), 8) && cumpleLargoMaximo(v.trim(), 10); }, mensaje: "Usa el formato sin puntos y con guion: 12345678-5." },
+    { test: validarRun, mensaje: "El RUN ingresado no es válido. Usa el formato 12345678-5." }
   ];
 
   const reglasNombre = [

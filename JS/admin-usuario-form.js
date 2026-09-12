@@ -50,8 +50,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const reglasRun = [
     { test: esRequerido, mensaje: "El RUN es obligatorio." },
-    { test: function (v) { return cumpleLargoMinimo(v, 7) && cumpleLargoMaximo(v, 9); }, mensaje: "Debe tener entre 7 y 9 caracteres." },
-    { test: validarRun, mensaje: "El RUN ingresado no es válido. Sin puntos ni guion." }
+    { test: function (v) { return cumpleLargoMinimo(v.trim(), 8) && cumpleLargoMaximo(v.trim(), 10); }, mensaje: "Usa el formato sin puntos y con guion: 12345678-5." },
+    { test: validarRun, mensaje: "El RUN ingresado no es válido. Usa el formato 12345678-5." }
   ];
 
   const reglasNombre = [
@@ -104,7 +104,9 @@ document.addEventListener("DOMContentLoaded", function () {
       validarCampo(inputDireccion, reglasDireccion)
     ];
 
-    if (!modoEdicion && obtenerUsuarioAdminPorRun(inputRun.value.trim())) {
+    const runNormalizado = normalizarRun(inputRun.value);
+
+    if (!modoEdicion && obtenerUsuarioAdminPorRun(runNormalizado)) {
       marcarInvalido(inputRun, "Ya existe un usuario con ese RUN.");
       resultados.push(false);
     }
@@ -116,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     const usuario = {
-      run: inputRun.value.trim().toUpperCase(),
+      run: runNormalizado,
       nombre: inputNombre.value.trim(),
       apellidos: inputApellidos.value.trim(),
       correo: inputCorreo.value.trim(),

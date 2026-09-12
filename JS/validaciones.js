@@ -41,15 +41,21 @@ function esDecimalValido(valor) {
   return /^[0-9]+(\.[0-9]+)?$/.test(valor.trim());
 }
 
+function normalizarRun(valor) {
+  return valor.trim().replace("-", "").toUpperCase();
+}
+
 /**
- * Valida un RUN chileno sin puntos ni guion (ej: "19011022K").
- * Verifica largo (7 a 9 caracteres) y dígito verificador.
+ * Valida un RUN chileno sin puntos y con guion (ej: "12345678-5").
+ * Verifica largo (8 a 10 caracteres) y dígito verificador.
  */
 function validarRun(valor) {
-  const run = valor.trim().toUpperCase();
+  const texto = valor.trim().toUpperCase();
+  if (!/^[0-9]{6,8}-[0-9K]$/.test(texto)) return false;
+
+  const run = normalizarRun(texto);
 
   if (run.length < 7 || run.length > 9) return false;
-  if (!/^[0-9]+[0-9K]$/.test(run)) return false;
 
   const cuerpo = run.slice(0, -1);
   const dv = run.slice(-1);
