@@ -1,0 +1,55 @@
+/*
+  Identidad de marca "Sonido Vivo" sobre Bootstrap 5.
+  Decisión: no se escribe CSS aparte para cada componente; se redefinen las
+  variables CSS de Bootstrap (--bs-*) con los colores de la Etapa 1
+  (dorado, rojo, café oscuro) y las clases de Bootstrap hacen el resto.
+*/
+:root {
+  --sv-gold: #C9982F;
+  --sv-gold-soft: #E3B85C;
+  --sv-red: #e01c1c;
+  --sv-surface: #211C16;
+  --sv-surface-alt: #2A241C;
+  --sv-muted: #A99C8C;
+
+  --bs-primary: var(--sv-gold);
+  --bs-primary-rgb: 201, 152, 47;
+  --bs-danger: var(--sv-red);
+  --bs-danger-rgb: 224, 28, 28;
+  --bs-link-color: #8a6a1d;
+  --bs-link-hover-color: var(--sv-gold);
+  --bs-body-font-family: 'Work Sans', system-ui, sans-serif;
+}
+
+h1, h2, h3, h4, .navbar-brand, .sv-display { font-family: 'Fraunces', serif; }
+
+/* Botón primario con los colores de marca (Bootstrap usa variables por botón) */
+.btn-primary {
+  --bs-btn-bg: var(--sv-gold);
+  --bs-btn-border-color: var(--sv-gold);
+  --bs-btn-color: #1a1510;
+  --bs-btn-hover-bg: var(--sv-gold-soft);
+  --bs-btn-hover-border-color: var(--sv-gold-soft);
+  --bs-btn-hover-color: #1a1510;
+  --bs-btn-active-bg: var(--sv-gold-soft);
+  --bs-btn-active-border-color: var(--sv-gold-soft);
+  --bs-btn-active-color: #1a1510;
+}
+.btn-outline-primary {
+  --bs-btn-color: #8a6a1d;
+  --bs-btn-border-color: var(--sv-gold);
+  --bs-btn-hover-bg: var(--sv-gold);
+  --bs-btn-hover-border-color: var(--sv-gold);
+  --bs-btn-hover-color: #1a1510;
+}
+
+.sv-navbar, .sv-footer, .sv-sidebar { background-color: var(--sv-surface); }
+.sv-navbar .navbar-brand { color: var(--sv-gold); letter-spacing: .5px; }
+.sv-navbar .nav-link { color: #d8cfc2; }
+.sv-navbar .nav-link:hover, .sv-navbar .nav-link.active { color: var(--sv-gold-soft); }
+.sv-footer { color: var(--sv-muted); }
+.sv-sidebar .nav-link { color: #d8cfc2; border-radius: .375rem; }
+.sv-sidebar .nav-link.active, .sv-sidebar .nav-link:hover { background: var(--sv-surface-alt); color: var(--sv-gold-soft); }
+.sv-card-img { height: 200px; object-fit: contain; background: #fff; padding: .5rem; }
+main { min-height: 60vh; }
+@media print { .sv-navbar, .sv-footer, .no-print { display: none !important; } }
