@@ -27,7 +27,7 @@ export default function DetalleOrden() {
         <strong>Entrega:</strong> {orden.direccion.calle}{orden.direccion.departamento ? `, depto. ${orden.direccion.departamento}` : ''}, {orden.direccion.comuna}, {orden.direccion.region}
         {orden.direccion.indicaciones && <><br /><strong>Indicaciones:</strong> {orden.direccion.indicaciones}</>}
       </div></div>
-      <OrderSummary items={orden.items} total={orden.total} titulo="Detalle" />
+      <OrderSummary items={orden.items} total={orden.total} descuento={orden.descuento} cupon={orden.cupon} titulo="Detalle" />
       <div className="mt-3 d-flex gap-2 no-print">
         <button type="button" className="btn btn-primary" onClick={() => window.print()}>Imprimir boleta</button>
         <Link to="/admin/ordenes" className="btn btn-outline-secondary">Volver</Link>
