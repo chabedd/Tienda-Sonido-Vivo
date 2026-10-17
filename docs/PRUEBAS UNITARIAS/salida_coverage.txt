@@ -1,0 +1,50 @@
+
+> proyecto-etapa2-react@0.0.0 coverage
+> vitest run --coverage --coverage.reporter=text --coverage.reporter=html --coverage.reporter=json-summary --coverage.skipFull=false --coverage.reportsDirectory=../../docs/PRUEBAS UNITARIAS/reporte_html
+
+
+ RUN  v5.0.3 C:/Users/pablo/Downloads/Tienda-Sonido-Vivo/fase2/proyecto_Etapa2_REACT
+      Coverage enabled with v8
+
+
+ Test Files  10 passed (10)
+      Tests  172 passed (172)
+   Start at  00:35:33
+   Duration  19.10s (environment 46%, tests 33%, setup 9%, transform 6%, import 4%, worker 2%)
+
+ % Coverage report from v8
+-------------------|---------|----------|---------|---------|-------------------
+File               | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-------------------|---------|----------|---------|---------|-------------------
+All files          |   99.86 |    91.52 |    99.6 |     100 |                   
+ src/components    |     100 |    96.77 |     100 |     100 |                   
+  ...goriaForm.jsx |     100 |    85.71 |     100 |     100 | 17                
+  CategoryCard.jsx |     100 |    91.66 |     100 |     100 | 23                
+  ProductoForm.jsx |     100 |    88.88 |     100 |     100 | 30                
+  UsuarioForm.jsx  |     100 |    93.33 |     100 |     100 | 30                
+ src/context       |     100 |     92.3 |     100 |     100 |                   
+  CartContext.jsx  |     100 |     90.9 |     100 |     100 | 21,38             
+ src/data          |     100 |    91.66 |     100 |     100 |                   
+  db.js            |     100 |    91.66 |     100 |     100 | 78,118            
+ src/pages         |     100 |       90 |     100 |     100 |                   
+  Categorias.jsx   |     100 |    83.33 |     100 |     100 | 42                
+  Checkout.jsx     |     100 |    91.66 |     100 |     100 | 64,74             
+  ...eProducto.jsx |     100 |       80 |     100 |     100 | 62-68             
+  PagoCorrecto.jsx |     100 |       75 |     100 |     100 | 39-40             
+  Registro.jsx     |     100 |    83.33 |     100 |     100 | 48                
+ src/pages/admin   |     100 |       92 |     100 |     100 |                   
+  ...riaEditar.jsx |     100 |       80 |     100 |     100 | 31-43             
+  Perfil.jsx       |     100 |       75 |     100 |     100 | 14,19             
+ src/utils         |   99.21 |    85.98 |   98.11 |     100 |                   
+  formularios.js   |     100 |     87.5 |     100 |     100 | 19                
+  productos.js     |     100 |       75 |     100 |     100 | 40-46,58-66       
+  reportes.js      |   94.11 |      100 |   83.33 |     100 |                   
+  validaciones.js  |     100 |    91.42 |     100 |     100 | 73,192            
+-------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 99.86% ( 725/726 )
+Branches     : 91.52% ( 378/413 )
+Functions    : 99.6% ( 254/255 )
+Lines        : 100% ( 652/652 )
+================================================================================

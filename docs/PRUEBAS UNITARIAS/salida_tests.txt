@@ -1,0 +1,9 @@
+
+ RUN  v5.0.3 C:/Users/pablo/Downloads/Tienda-Sonido-Vivo/fase2/proyecto_Etapa2_REACT
+
+
+ Test Files  10 passed (10)
+      Tests  172 passed (172)
+   Start at  00:35:15
+   Duration  17.07s (environment 52%, tests 30%, setup 9%, transform 5%, import 3%, worker 1%)
+
